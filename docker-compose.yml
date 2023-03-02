@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: nest-db
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'nest'
+      MYSQL_USER: 'cecile'
+      MYSQL_PASSWORD: '1234'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - ./data:/var/lib/mysql
